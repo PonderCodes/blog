@@ -1,4 +1,40 @@
+:root {
+  --font-color: var(#a27b5c);
+  --background-color: var(#2c3639);
+  --heading-color: var(#dcd7c9);
+  --anchor-color: var(#dcd7c9);
+}
+
+@font-face {
+  font-family: SourceSerifPro-Regular;
+  src: url(fonts/SourceSerifPro-Regular.ttf);
+}
+
 body {
-    background-color: #1A120B;
-    color: #D5CEA3;
+  font-family: SourceSerifPro-Regular, sans-serif;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+h1 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    margin-bottom: 1vh;
+}
+
+a {
+  color: var(--anchor-color);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  &:hover, &:focus {
+      border-bottom: 3px solid currentColor;
+  }
 }

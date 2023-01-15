@@ -38,3 +38,7 @@ a {
       border-bottom: 3px solid currentColor;
   }
 }
+
+.byline {
+  font-size: x-small;
+}

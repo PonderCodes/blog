@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://latex.now.sh/style.css">
   <title>Ponder Pontificates - a blog</title>
 </head>
 
@@ -23,6 +23,30 @@
       </p>
       <p>
         That's it for the introduction. I usually like to be fairly succint.
+      </p>
+    </article>
+    <hr />
+    <article>
+      <h1>So, Let's Write a Game in Dart</h1>
+      <p class="byline">by Ponder, 15 Jan 2023</p>
+      <p>I mentioned alread that this implementation will</p>
+      <blockquote>
+        ...target web, [be] a PWA, implement native-ish features...
+      </blockquote>
+      <p>
+        Let's get started on it. First, we need some amount of planning. We'll start with a game of
+        snake. I believe an ECS (Entity Component System, sometimes Entity System) will serve this game well.
+        Entities will include snake heads, snake bodies, food. Those will need components like location,
+        color, direction, a counter. We probably also want entities for our rendering canvas and some other
+        things. We also need systems for rendering, scoring, generating food, and command input (some way to
+        tell the snakes which direction to go.)
+      </p>
+      <p>
+        <code>
+          class Entity {<br>
+<br>
+          }<br>
+        </code>
       </p>
     </article>
   </section>

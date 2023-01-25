@@ -3,6 +3,8 @@
 
 <head>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prism.css">
+  <script src="prism.js"></script>
   <title>Ponder Codes a Game in Dart</title>
 </head>
 
@@ -12,6 +14,7 @@
     <h1>A Game in Dart</h1>
     <p class="author">Ponder<br>January 2023</p>
   </header>
+  <div id="dark-mode-toggle" style="cursor:pointer;position:absolute;top:0px;left:10px;" ;>&#127763;</div>
 
   <div class="abstract">
     <h2>Abstract</h2>
@@ -32,7 +35,10 @@
         <a href="#getting-started">Getting Started</a>
       </li>
       <li>
-        A Minimal Web Page
+        <a href="#a-minimal-web-page">A Minimal Web Page</a>
+      </li>
+      <li>
+        <a href="#basic-ecs">Basic ECS</a>
       </li>
     </ol>
   </nav>
@@ -43,7 +49,7 @@
       <p>start...</p>
     </article>
     <article>
-      <h2>A Minimal Web Page</h2>
+      <h2 id="a-minimal-web-page">A Minimal Web Page</h2>
       <p>I mentioned alread that this implementation will</p>
       <blockquote>
         ...target web, [be] a PWA, implement native-ish features...
@@ -56,15 +62,48 @@
         things. We also need systems for rendering, scoring, generating food, and command input (some way to
         tell the snakes which direction to go.)
       </p>
+      <span class="sidenote left">To do: write up the HTML basics</span>
+    </article>
+    <article>
+      <h2 id="basic-ecs">Basic ECS</h2>
       <p>
-        <code><pre>
-class Entity {
+        Let's start with a entities. Each entity is nothing more than an identifier. Let's wrap
+        a UUID in an <code class="language-dart">Entity</code> class.
+      </p>
+      <p>
+      <pre class="line-numbers"><code class="language-dart">class Entity {
+  final String _uuid;
 
+  Entity() : _uuid = Uuid().v4();
+
+  @override
+  String toString() {
+    return "$runtimeType $_uuid";
+  }
 }
-        </pre></code>
+</code></pre>
+      </p>
+      <p>
+        We only need the string version of the random UUID. We initialize it immediately in the constructor, and all
+        instances of <code>Entity</code> are immutable, so the <code>_uuid</code> member variable is marked
+        <code>final</code>. We also have an informative <code>toString()</code> method for use while debugging.
+      </p>
+      <p>
+        That's all. No functionality for entities.
       </p>
     </article>
   </main>
+  <footer>
+    <p class="footnotes">Built with the cooperation of several phalanges and a biological neural network; uses <a
+        href="https://latex.vercel.app/">latex.css</a> and <a href="https://prismjs.com/">Prism</a>.</p>
+  </footer>
+  <script>
+    document
+      .querySelector("#dark-mode-toggle")
+      .addEventListener('click', () => {
+        document.body.classList.toggle("latex-dark");
+      });
+  </script>
 </body>
 
 </html>

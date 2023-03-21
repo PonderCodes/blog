@@ -16,7 +16,7 @@
     <p class="author">Ponder<br>January 2023</p>
   </header>
   <div id="dark-mode-toggle" style="cursor:pointer;position:absolute;top:0px;left:10px;" ;>&#127763;</div>
-
+<div id="bgdiv"><canvas id="bgcanvas"></canvas></div>
   <div class="abstract">
     <h2>Abstract</h2>
     <p>
@@ -38,6 +38,12 @@
       .addEventListener('click', () => {
         document.body.classList.toggle("latex-dark");
       });
+    
+    let canv = document.querySelector("#bgcanvas");
+    let ctx = canv.getContext('2d');
+    ctx.strokeStyle('red');
+    ctx.moveTo(0,0);
+    ctx.lineTo(200,200);
   </script>
 </body>
 

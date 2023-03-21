@@ -628,4 +628,5 @@ h6 {
 #bgdiv {
   width: 90ch;
   height: 100vh;
+  z-index: -1;
 }
